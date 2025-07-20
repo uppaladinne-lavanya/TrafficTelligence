@@ -1,0 +1,44 @@
+from flask import Flask, request, jsonify
+import datetime
+import random
+
+app = Flask(_name_)
+
+# Sample response for vehicle count (in place of ML model output)
+def simulate_traffic_data():
+    return {
+        "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "location": "Highway 45, Sector 9",
+        "vehicle_counts": {
+            "car": random.randint(50, 120),
+            "bike": random.randint(80, 200),
+            "bus": random.randint(5, 15),
+            "truck": random.randint(10, 25),
+        },
+        "average_speed_kmph": random.randint(30, 60)
+    }
+
+# Home route
+@app.route('/')
+def home():
+    return "TrafficTelligence API is running!"
+
+# Endpoint for simulated traffic volume
+@app.route('/api/traffic', methods=['GET'])
+def get_traffic_data():
+    data = simulate_traffic_data()
+    return jsonify(data)
+
+# Endpoint for posting new camera/sensor data (extend for real ML use)
+@app.route('/api/upload', methods=['POST'])
+def upload_data():
+    content = request.json
+    # You can add logic to process video/image files or sensor data
+    return jsonify({
+        "status": "received",
+        "message": "Data uploaded successfully",
+        "received_data": content
+    })
+
+if _name_ == '_main_':
+    app.run(debug=True)

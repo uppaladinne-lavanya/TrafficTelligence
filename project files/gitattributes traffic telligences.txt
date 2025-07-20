@@ -1,0 +1,12 @@
+_pycache_/
+*.pyc
+.env
+*.h5
+*.pt
+*.pkl
+*.log
+*.db
+.DS_Store
+.vscode/
+.idea/
+*.ipynb_checkpoints
