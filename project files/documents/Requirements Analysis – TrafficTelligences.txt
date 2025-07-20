@@ -1,0 +1,188 @@
+Requirements Analysis – TrafficTelligence
+
+🎯 Objective:
+
+To clearly identify and document functional and non-functional requirements needed for building a robust, intelligent traffic monitoring and prediction system.
+
+
+---
+
+🔍 1. Functional Requirements
+
+These define what the system should do.
+
+🟢 Data Collection
+
+Collect real-time traffic data from:
+
+Live traffic APIs (e.g., Google Maps, TomTom)
+
+CCTV camera feeds
+
+IoT-based road sensors (if applicable)
+
+
+
+🟢 Data Preprocessing
+
+Clean and format raw traffic data
+
+Handle missing or noisy data
+
+Convert time-series inputs for ML model training
+
+
+🟢 Machine Learning Model
+
+Train model (CNN, LSTM, etc.) to:
+
+Estimate current traffic volume
+
+Predict future congestion levels
+
+
+Output should include:
+
+Traffic count per location
+
+Congestion probability level
+
+
+
+🟢 Dashboard Interface
+
+User-facing dashboard to:
+
+Display current and historical traffic data
+
+Visualize congestion heatmaps or charts
+
+Filter by region and time
+
+
+
+🟢 Admin Panel
+
+Upload new datasets
+
+Monitor model performance
+
+Access logs and usage stats
+
+
+🟢 API Services
+
+Provide RESTful APIs for:
+
+Sending raw data
+
+Fetching predictions
+
+Accessing dashboard metrics
+
+
+
+
+---
+
+⚙ 2. Non-Functional Requirements
+
+These define how the system should behave.
+
+🔵 Performance
+
+Real-time prediction latency < 2 seconds
+
+Dashboard refresh every 10 seconds
+
+Handle ≥ 100 concurrent users
+
+
+🔵 Scalability
+
+Should support deployment in multiple city zones
+
+Must be horizontally scalable via containers
+
+
+🔵 Security
+
+Role-based access (Admin vs Viewer)
+
+JWT-based API authentication
+
+HTTPS communication
+
+
+🔵 Reliability & Availability
+
+99% uptime during operational hours
+
+Automatic restart on failure (using Docker or PM2)
+
+
+🔵 Maintainability
+
+Modular architecture (e.g., Microservices)
+
+Clean logging and error-handling mechanisms
+
+
+🔵 Usability
+
+Simple UI for commuters and officials
+
+Interactive charts and real-time feedback
+
+
+
+---
+
+📦 3. System Requirements
+
+💻 Hardware
+
+For model training: ≥8GB RAM, GPU (optional)
+
+For hosting: 2 vCPUs, 4GB RAM minimum
+
+
+🧰 Software
+
+Python 3.9+
+
+Flask / FastAPI (backend)
+
+Streamlit / Dash / React.js (dashboard)
+
+TensorFlow / PyTorch (ML models)
+
+MongoDB / PostgreSQL (Database)
+
+Docker (for deployment)
+
+
+
+---
+
+🧩 4. External Dependencies
+
+Traffic API Providers (e.g., HERE Maps, OpenTraffic)
+
+Public Datasets for training (e.g., PeMS, INRIX)
+
+Cloud services (AWS/GCP/Render/Heroku)
+
+
+
+---
+
+✅ Final Deliverables Based on Requirements
+
+Trained traffic volume prediction model
+
+Live dashboard interface
+
+REST APIs for external integration
+
+Final report + deployment script
